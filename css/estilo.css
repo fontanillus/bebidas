@@ -1,0 +1,54 @@
+ body {
+     width: 30%;
+     height: auto;
+     background-image: url(../img/cocteles.jpg);
+     background-repeat: no-repeat;
+ }
+
+
+ fieldset {
+     font-family: cursive;
+     font-size: large;
+     height: 250px;
+     overflow-y: scroll;
+     scrollbar-color: violet lightgray;
+     /* Firefox */
+     scrollbar-width: thin;
+     /* Firefox */
+     border: none;
+ }
+
+ h1 {
+     font-family: cursive;
+     margin-left: 18%;
+ }
+
+ /* Chrome, Edge, Safari */
+ fieldset::-webkit-scrollbar {
+     width: 10px;
+ }
+
+ fieldset::-webkit-scrollbar-track {
+     background: lightgray;
+ }
+
+ fieldset::-webkit-scrollbar-thumb {
+     background-color: violet;
+     border-radius: 5px;
+     margin-left: 20%;
+ }
+
+
+ label {
+     font-size: 0.8em;
+ }
+
+ button {
+     border: 5px solid violet;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     padding-left: 10px;
+     padding-right: 10px;
+     cursor: pointer;
+     margin-left: 40%;
+ }

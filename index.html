@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEBIDAS</title>
+  <link rel="stylesheet" href="./css/estilo.css">
+
+</head>
+
+<body>
+  <h1>Selecciona tu bebida</h1>
+  <fieldset id="bebidas">
+  </fieldset>
+  <p><button type="button" onclick="verificarBebida()">Ordenar bebida</button></p>
+  <p id="seleccionada"></p>
+
+  <script>
+    const productos = ['Agua', 'Café', 'Té', 'Zumo Natural', 'Refresco', 'Cerveza', 'Sidra', 'Sake', 'Whisky', 'Vodka', 'Ron', 'Ginebra', 'Tequila', 'Brandy',
+      'Cachaça', 'Licores', 'Limoncello', 'Amaretto', 'Baileys', 'Kahlúa', 'Cointreau', 'Pacharán', 'Anís', 'Oporto', 'Jerez', 'Madeira', 'Marsala', 'Cócteles', 'Mojito',
+      'Cosmopolitan', 'Margarita', 'Martini', 'Negroni', 'Daiquiri', 'Piña Colada', 'Vermouth', 'Hidromiel',]
+
+
+    const SELECCION = document.getElementById('seleccionada');
+    const BEBIDAS = document.getElementById('bebidas');
+    let vueltas = productos.length;
+    for (let i = 0; i < vueltas; i++) {
+      opcion = document.createElement('input');
+      opcion.id = 'bebida' + i;
+      opcion.name = 'bebida';
+      opcion.type = 'radio';
+      opcion.value = productos[i];
+      BEBIDAS.appendChild(opcion);
+
+      etiqueta = document.createElement('label');
+      etiqueta.setAttribute("for", 'bebida' + i); // Los atributos se pueden indicar de esta forma 
+      etiqueta.innerHTML = productos[i];
+      BEBIDAS.appendChild(etiqueta);
+
+      salto = document.createElement('br');
+      BEBIDAS.appendChild(salto);
+    }
+
+
+    function verificarBebida() {
+      //completar
+      const seleccion = document.querySelector('input[name="bebida"]:checked');//leer como reglas CSS
+      if (seleccion) {
+        SELECCION.textContent = `Usted ha seleccionado ${seleccion.value}`;// solo permite escribir texto
+        SELECCION.style.color = "pink";
+        SELECCION.style.fontFamily = "cursive";
+
+      } else {
+        SELECCION.textContent = "Usted no ha seleccionado ninguna bebida.";
+        SELECCION.style.color = "pink";
+        SELECCION.style.fontFamily = "cursive";
+      }
+    }
+    //si usamos SELECCCION.innerHTML = bebidaSeleccionada 
+    //? `Ùsted ha seleccionado: ${bebidaSeleccion.value}´;
+    //: "No ha seleccionado ninguna bebida.";
+    //con esto podemos usar etiqueta de atributo de HTML (negrita, etc.)
+
+  </script>
+
+</body>
+
+</html>
