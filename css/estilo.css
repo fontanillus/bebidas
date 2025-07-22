@@ -5,38 +5,43 @@
      background-repeat: no-repeat;
  }
 
+fieldset {
+    font-family: cursive;
+    font-size: large;
+    height: 250px;
+    overflow-y: auto;
+    border: none;
+}
 
- fieldset {
-     font-family: cursive;
-     font-size: large;
-     height: 250px;
-     overflow-y: scroll;
-     scrollbar-color: violet lightgray;
-     /* Firefox */
-     scrollbar-width: thin;
-     /* Firefox */
-     border: none;
- }
+/* Firefox */
+fieldset {
+    scrollbar-width: thin;
+    scrollbar-color: violet lightgray;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+fieldset::-webkit-scrollbar {
+    width: 10px;
+}
+
+fieldset::-webkit-scrollbar-track {
+    background: lightgray;
+}
+
+fieldset::-webkit-scrollbar-thumb {
+    background-color: violet;
+    border-radius: 5px;
+    border: 2px solid lightgray; /* da margen y contraste */
+}
+
+ 
+
 
  h1 {
      font-family: cursive;
      margin-left: 18%;
  }
 
- /* Chrome, Edge, Safari */
- fieldset::-webkit-scrollbar {
-     width: 10px;
- }
-
- fieldset::-webkit-scrollbar-track {
-     background: lightgray;
- }
-
- fieldset::-webkit-scrollbar-thumb {
-     background-color: violet;
-     border-radius: 5px;
-     margin-left: 20%;
- }
 
 
  label {
@@ -45,10 +50,61 @@
 
  button {
      border: 5px solid violet;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     padding-left: 10px;
-     padding-right: 10px;
+     padding: 10px;
      cursor: pointer;
      margin-left: 40%;
  }
+
+ /* Móviles (hasta 767px) */
+@media (max-width: 767px) {
+    body {
+        width: 90%;
+        background-size: cover;
+    }
+
+    fieldset {
+        font-size: medium;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-left: 0;
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    button {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Tablets en vertical y horizontal (768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        width: 80%;
+        background-size: cover;
+    }
+
+    fieldset {
+        font-size: large;
+        height: 230px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-left: 0;
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    button {
+        margin-left: 20%;
+        padding: 12px;
+    }
+}

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BEBIDAS</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <link rel="stylesheet" href="./css/estilo.css">
 
 </head>
@@ -37,6 +38,11 @@
       etiqueta.setAttribute("for", 'bebida' + i); // Los atributos se pueden indicar de esta forma 
       etiqueta.innerHTML = productos[i];
       BEBIDAS.appendChild(etiqueta);
+
+      etiqueta.style.fontFamily = "cursive";
+      etiqueta.style.fontSize = "1em";
+      etiqueta.style.color = "darkblue";
+      etiqueta.style.marginLeft = "8px";
 
       salto = document.createElement('br');
       BEBIDAS.appendChild(salto);
