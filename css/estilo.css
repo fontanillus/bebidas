@@ -1,9 +1,9 @@
- body {
-     width: 30%;
-     height: auto;
-     background-image: url(../img/cocteles.jpg);
-     background-repeat: no-repeat;
- }
+body {
+    width: 30%;
+    height: auto;
+    background-image: url(../img/cocteles.jpg);
+    background-repeat: no-repeat;
+}
 
 fieldset {
     font-family: cursive;
@@ -11,12 +11,6 @@ fieldset {
     height: 250px;
     overflow-y: auto;
     border: none;
-}
-
-/* Firefox */
-fieldset {
-    scrollbar-width: thin;
-    scrollbar-color: violet lightgray;
 }
 
 /* WebKit (Chrome, Edge, Safari) */
@@ -31,80 +25,36 @@ fieldset::-webkit-scrollbar-track {
 fieldset::-webkit-scrollbar-thumb {
     background-color: violet;
     border-radius: 5px;
-    border: 2px solid lightgray; /* da margen y contraste */
+    border: 2px solid lightgray; /* Contraste y margen */
 }
 
- 
+/* Aplica los estilos solo en los navegadores que soportan scrollbar-width */
+@supports (scrollbar-width: thin) {
+    fieldset {
+        scrollbar-width: thin; /* Firefox y otros navegadores compatibles */
+        scrollbar-color: violet lightgray;
+    }
+}
 
+h1 {
+    font-family: cursive;
+    margin-left: 18%;
+}
 
- h1 {
-     font-family: cursive;
-     margin-left: 18%;
- }
+label {
+    font-size: 0.8em;
+}
 
+button {
+    border: 5px solid violet;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 40%;
+}
 
-
- label {
-     font-size: 0.8em;
- }
-
- button {
-     border: 5px solid violet;
-     padding: 10px;
-     cursor: pointer;
-     margin-left: 40%;
- }
-
- /* Móviles (hasta 767px) */
+/* Media query para móviles (solo tamaño de pantalla) */
 @media (max-width: 767px) {
-    body {
-        width: 90%;
-        background-size: cover;
-    }
-
     fieldset {
-        font-size: medium;
-        height: 200px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-        margin-left: 0;
-    }
-
-    label {
-        font-size: 1em;
-    }
-
-    button {
-        margin-left: 0;
-        width: 100%;
-    }
-}
-
-/* Tablets en vertical y horizontal (768px a 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    body {
-        width: 80%;
-        background-size: cover;
-    }
-
-    fieldset {
-        font-size: large;
-        height: 230px;
-    }
-
-    h1 {
-        font-size: 2em;
-        margin-left: 0;
-    }
-
-    label {
-        font-size: 1em;
-    }
-
-    button {
-        margin-left: 20%;
-        padding: 12px;
+        overflow-y: scroll; /* Fuerza visibilidad de la barra en pantallas pequeñas */
     }
 }
